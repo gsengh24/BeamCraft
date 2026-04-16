@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: beamcraft
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    disk:
+      name: beamcraft-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: STORAGE_DIR
+        value: /data

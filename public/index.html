@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeamCraft – Premium Laser Cutting | Unimark Enterprises, Delhi</title>
+  <meta name="description" content="BeamCraft by Unimark Enterprises, Pitampura Delhi – Premium laser-cut products: nameplates, acrylic items, wooden decor, awards, gifts & more. Custom orders welcome." />
+  <meta name="keywords" content="laser cutting Delhi, acrylic nameplate, laser cut gifts, wooden decor, BeamCraft, Unimark Enterprises" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="beam-logo">
+      <img src="images/logo.svg" alt="Beamcraft Logo" style="height: 60px; object-fit: contain;">
+    </div>
+    <div class="preloader-text">BEAMCRAFT</div>
+    <div class="preloader-bar"><div class="preloader-fill"></div></div>
+  </div>
+</div>
+
+<!-- FLOATING PARTICLES -->
+<div id="particles-container"></div>
+
+<!-- HEADER -->
+<header id="header">
+  <nav class="navbar">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.svg" alt="Beamcraft Logo" style="height: 40px; object-fit: contain;">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#products" class="nav-link">Products</a></li>
+      <li><a href="#process" class="nav-link">Process</a></li>
+      <li><a href="#gallery" class="nav-link">Gallery</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button id="searchBtn" class="icon-btn" aria-label="Search"><i class="fas fa-search"></i></button>
+      <button id="cartBtn" class="icon-btn cart-btn" aria-label="Cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+      <a href="/admin" class="btn-admin" target="_blank"><i class="fas fa-lock"></i> Admin</a>
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mob-link">Home</a>
+    <a href="#about" class="mob-link">About</a>
+    <a href="#products" class="mob-link">Products</a>
+    <a href="#process" class="mob-link">Process</a>
+    <a href="#gallery" class="mob-link">Gallery</a>
+    <a href="#contact" class="mob-link">Contact</a>
+    <a href="/admin" class="mob-link admin-link" target="_blank"><i class="fas fa-lock"></i> Admin Portal</a>
+  </div>
+</header>
+
+<!-- SEARCH OVERLAY -->
+<div id="searchOverlay" class="search-overlay">
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search products, categories..." />
+    <button id="searchClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div id="searchResults" class="search-results"></div>
+</div>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="laser-beam beam1"></div>
+    <div class="laser-beam beam2"></div>
+    <div class="laser-beam beam3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <i class="fas fa-bolt"></i> Precision Laser Cutting
+    </div>
+    <h1 class="hero-title">
+      Crafting <span class="gradient-text">Brilliance</span><br/>
+      With Every Laser Cut
+    </h1>
+    <p class="hero-subtitle">Premium laser-cut products crafted with precision in Delhi. Acrylic nameplates, wooden decor, custom awards, personalized gifts & much more.</p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">
+        <i class="fas fa-th-large"></i> Explore Products
+      </a>
+      <a href="#contact" class="btn-outline">
+        <i class="fas fa-headset"></i> Get Custom Quote
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-num" data-target="5000">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Happy Customers</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="200">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Products</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="10">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="100">0</span><span class="stat-plus">%</span>
+        <span class="stat-label">Custom Orders</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-float card-float1">
+      <i class="fas fa-star text-gold"></i>
+      <div>
+        <div class="fc-title">Top Rated</div>
+        <div class="fc-sub">4.9 ★ Rating</div>
+      </div>
+    </div>
+    <div class="hero-card-float card-float2">
+      <i class="fas fa-shipping-fast text-accent"></i>
+      <div>
+        <div class="fc-title">Fast Delivery</div>
+        <div class="fc-sub">2-5 Days</div>
+      </div>
+    </div>
+    <div class="hero-card-float card-float3">
+      <i class="fas fa-paint-brush text-green"></i>
+      <div>
+        <div class="fc-title">100% Custom</div>
+        <div class="fc-sub">Your Design</div>
+      </div>
+    </div>
+    <div class="hero-device">
+      <div class="device-glow"></div>
+      <div class="laser-cut-preview">
+        <svg viewBox="0 0 300 300" width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" style="stop-color:#e94560;stop-opacity:0.3"/>
+              <stop offset="100%" style="stop-color:#0d0d1a;stop-opacity:0"/>
+            </radialGradient>
+          </defs>
+          <circle cx="150" cy="150" r="140" fill="url(#glowGrad)"/>
+          <!-- Mandala pattern -->
+          <g transform="translate(150,150)">
+            <circle r="120" fill="none" stroke="#e94560" stroke-width="0.5" opacity="0.3" class="spin-slow"/>
+            <circle r="90" fill="none" stroke="#ff6b35" stroke-width="0.5" opacity="0.4" class="spin-slow-rev"/>
+            <circle r="60" fill="none" stroke="#e94560" stroke-width="1" opacity="0.6"/>
+            <circle r="30" fill="none" stroke="#ff6b35" stroke-width="1.5" opacity="0.8"/>
+            <circle r="8" fill="#e94560"/>
+            <!-- Petals -->
+            <g class="rotate-anim">
+              <ellipse rx="15" ry="45" fill="none" stroke="#e94560" stroke-width="1" opacity="0.7" transform="rotate(0)"/>
+              <ellipse rx="15" ry="45" fill="none" stroke="#e94560" stroke-width="1" opacity="0.7" transform="rotate(45)"/>
+              <ellipse rx="15" ry="45" fill="none" stroke="#e94560" stroke-width="1" opacity="0.7" transform="rotate(90)"/>
+              <ellipse rx="15" ry="45" fill="none" stroke="#e94560" stroke-width="1" opacity="0.7" transform="rotate(135)"/>
+            </g>
+            <!-- Lines -->
+            <line x1="-120" y1="0" x2="120" y2="0" stroke="#ff6b35" stroke-width="0.5" opacity="0.3"/>
+            <line x1="0" y1="-120" x2="0" y2="120" stroke="#ff6b35" stroke-width="0.5" opacity="0.3"/>
+            <line x1="-85" y1="-85" x2="85" y2="85" stroke="#ff6b35" stroke-width="0.5" opacity="0.3"/>
+            <line x1="85" y1="-85" x2="-85" y2="85" stroke="#ff6b35" stroke-width="0.5" opacity="0.3"/>
+          </g>
+          <!-- Laser dot -->
+          <circle cx="150" cy="50" r="4" fill="#e94560" class="laser-dot"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator">
+    <div class="scroll-text">Scroll Down</div>
+    <div class="scroll-arrow"><i class="fas fa-chevron-down"></i></div>
+  </div>
+</section>
+
+<!-- MARQUEE STRIP -->
+<div class="marquee-strip">
+  <div class="marquee-content">
+    <span><i class="fas fa-bolt"></i> Precision Laser Cutting</span>
+    <span><i class="fas fa-paint-brush"></i> Custom Designs</span>
+    <span><i class="fas fa-award"></i> Premium Quality</span>
+    <span><i class="fas fa-shipping-fast"></i> Pan India Delivery</span>
+    <span><i class="fas fa-star"></i> 5000+ Happy Customers</span>
+    <span><i class="fas fa-certificate"></i> ISO Quality Standards</span>
+    <span><i class="fas fa-bolt"></i> Precision Laser Cutting</span>
+    <span><i class="fas fa-paint-brush"></i> Custom Designs</span>
+    <span><i class="fas fa-award"></i> Premium Quality</span>
+    <span><i class="fas fa-shipping-fast"></i> Pan India Delivery</span>
+    <span><i class="fas fa-star"></i> 5000+ Happy Customers</span>
+    <span><i class="fas fa-certificate"></i> ISO Quality Standards</span>
+  </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="section about-section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual" data-aos="fade-right">
+        <div class="about-img-wrapper">
+          <div class="about-glow"></div>
+          <div class="about-card-main">
+            <i class="fas fa-bolt fa-3x"></i>
+            <h3>Unimark Enterprises</h3>
+            <p>Pitampura, New Delhi</p>
+            <div class="about-features-mini">
+              <span><i class="fas fa-check"></i> ISO Certified</span>
+              <span><i class="fas fa-check"></i> Since 2015</span>
+              <span><i class="fas fa-check"></i> 10+ Machines</span>
+            </div>
+          </div>
+          <div class="about-card-badge">
+            <span class="badge-year">10+</span>
+            <span class="badge-text">Years of Excellence</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-content" data-aos="fade-left">
+        <div class="section-tag">About BeamCraft</div>
+        <h2 class="section-title">Unimark Enterprises<br/><span class="gradient-text">Pitampura, Delhi</span></h2>
+        <p class="about-desc">We are <strong>Unimark Enterprises</strong>, a premier laser cutting and engraving company based in Pitampura, New Delhi. Operating under our brand <strong>BeamCraft</strong>, we bring precision, creativity, and quality to every product we create.</p>
+        <p class="about-desc">From personalized nameplates to corporate awards, wedding accessories to decorative art — our state-of-the-art laser cutting machines and skilled craftsmen deliver perfection every time.</p>
+        <div class="about-values">
+          <div class="value-card">
+            <i class="fas fa-crosshairs"></i>
+            <h4>Precision</h4>
+            <p>0.01mm accuracy</p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-palette"></i>
+            <h4>Creativity</h4>
+            <p>Unlimited designs</p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-shield-alt"></i>
+            <h4>Quality</h4>
+            <p>Premium materials</p>
+          </div>
+          <div class="value-card">
+            <i class="fas fa-headset"></i>
+            <h4>Support</h4>
+            <p>24/7 assistance</p>
+          </div>
+        </div>
+        <div class="about-cta">
+          <a href="#contact" class="btn-primary">Get in Touch</a>
+          <a href="tel:+918048964183" class="btn-outline"><i class="fas fa-phone"></i> Call Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES & PRODUCTS SECTION -->
+<section id="products" class="section products-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Our Collection</div>
+      <h2 class="section-title">Premium <span class="gradient-text">Products</span></h2>
+      <p class="section-sub">Discover our extensive range of laser-cut products. Each piece is crafted with precision and care.</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters-bar" data-aos="fade-up">
+      <div class="filter-categories" id="filterCategories">
+        <button class="filter-btn active" data-cat="all">All Products</button>
+        <button class="filter-btn" data-cat="Nameplates & Signage">Nameplates</button>
+        <button class="filter-btn" data-cat="Home Decor">Home Decor</button>
+        <button class="filter-btn" data-cat="Gifts & Personalized">Gifts</button>
+        <button class="filter-btn" data-cat="Wedding & Events">Wedding</button>
+        <button class="filter-btn" data-cat="Festive & Seasonal">Festive</button>
+        <button class="filter-btn" data-cat="Kitchen & Dining">Kitchen</button>
+        <button class="filter-btn" data-cat="Boxes & Packaging">Boxes</button>
+        <button class="filter-btn" data-cat="Craft & Custom">Craft</button>
+      </div>
+      <div class="filter-controls">
+        <select id="sortSelect" class="sort-select">
+          <option value="">Sort By</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating">Top Rated</option>
+          <option value="newest">Newest First</option>
+        </select>
+        <div class="view-toggle">
+          <button id="gridView" class="view-btn active"><i class="fas fa-th"></i></button>
+          <button id="listView" class="view-btn"><i class="fas fa-list"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick filters -->
+    <div class="quick-filters" data-aos="fade-up">
+      <button class="quick-btn active" data-filter="all">All</button>
+      <button class="quick-btn" data-filter="featured"><i class="fas fa-star"></i> Featured</button>
+      <button class="quick-btn" data-filter="bestseller"><i class="fas fa-fire"></i> Bestsellers</button>
+      <button class="quick-btn" data-filter="new"><i class="fas fa-sparkles"></i> New Arrivals</button>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Products rendered by JS -->
+      <div class="products-loading">
+        <div class="loading-spinner"></div>
+        <p>Loading products...</p>
+      </div>
+    </div>
+
+    <div class="load-more-wrapper" id="loadMoreWrapper" style="display:none;">
+      <button class="btn-load-more" id="loadMoreBtn">Load More Products <i class="fas fa-chevron-down"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS SECTION -->
+<section id="process" class="section process-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title">Our <span class="gradient-text">Process</span></h2>
+      <p class="section-sub">From concept to creation — your custom laser-cut product in 4 simple steps.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step" data-aos="fade-up" data-aos-delay="0">
+        <div class="step-icon"><i class="fas fa-pencil-alt"></i><span class="step-num">01</span></div>
+        <h3>Design</h3>
+        <p>Share your idea or upload your design. Our team helps refine it for perfect laser cutting.</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+        <div class="step-icon"><i class="fas fa-check-circle"></i><span class="step-num">02</span></div>
+        <h3>Approve</h3>
+        <p>Review the digital proof and approve the final design before production begins.</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+        <div class="step-icon"><i class="fas fa-bolt"></i><span class="step-num">03</span></div>
+        <h3>Craft</h3>
+        <p>Our high-precision laser machines cut and engrave your product with incredible accuracy.</p>
+      </div>
+      <div class="process-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+        <div class="step-icon"><i class="fas fa-shipping-fast"></i><span class="step-num">04</span></div>
+        <h3>Deliver</h3>
+        <p>Carefully packaged and delivered to your doorstep anywhere in India within 2-5 days.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Happy Customers</div>
+      <h2 class="section-title">What People <span class="gradient-text">Say</span></h2>
+    </div>
+    <div class="testimonials-track" id="testimonialsTrack">
+      <div class="testimonials-inner">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"The acrylic LED lamp I ordered was absolutely stunning! The laser work is so precise. Got so many compliments. Will definitely order again!"</p>
+          <div class="t-author"><div class="t-avatar">R</div><div><strong>Rahul Sharma</strong><span>Delhi</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Ordered custom nameplates for our entire office. The quality is exceptional — clean cuts, premium material, and delivered on time. BeamCraft is the best!"</p>
+          <div class="t-author"><div class="t-avatar">P</div><div><strong>Priya Malhotra</strong><span>Gurgaon</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"Got our wedding invitation cards laser-cut from BeamCraft. Everyone was amazed by the intricate design. Highly professional team and great customer service!"</p>
+          <div class="t-author"><div class="t-avatar">A</div><div><strong>Amit & Neha</strong><span>Noida</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"The mandala wall art piece is a masterpiece! Completely transformed my living room. The finish and color are exactly as shown. Very happy customer!"</p>
+          <div class="t-author"><div class="t-avatar">S</div><div><strong>Sunita Arora</strong><span>Faridabad</span></div></div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p>"We ordered corporate trophies for our annual awards ceremony. BeamCraft delivered 100 pieces in 3 days with flawless quality. Incredible work!"</p>
+          <div class="t-author"><div class="t-avatar">V</div><div><strong>Vikrant Gupta</strong><span>Corporate Client</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-dots" id="testimonialDots"></div>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section id="gallery" class="section gallery-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Our Work</div>
+      <h2 class="section-title">Craft <span class="gradient-text">Gallery</span></h2>
+      <p class="section-sub">A glimpse of our precision laser-cut masterpieces.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid">
+      <!-- Gallery items generated by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Why Us</div>
+      <h2 class="section-title">Why Choose <span class="gradient-text">BeamCraft</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="why-icon"><i class="fas fa-crosshairs"></i></div>
+        <h3>Precision Cutting</h3>
+        <p>Our CO2 and fiber laser machines achieve 0.01mm accuracy for flawless results every time.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="why-icon"><i class="fas fa-gem"></i></div>
+        <h3>Premium Materials</h3>
+        <p>We use only top-quality acrylic, MDF, plywood, and metal for durable, beautiful products.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="why-icon"><i class="fas fa-paint-brush"></i></div>
+        <h3>100% Customizable</h3>
+        <p>Every product can be personalized with your name, logo, or custom design.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="why-icon"><i class="fas fa-rupee-sign"></i></div>
+        <h3>Best Prices</h3>
+        <p>Factory-direct pricing with no middlemen. Get the best quality at the best price.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="400">
+        <div class="why-icon"><i class="fas fa-shipping-fast"></i></div>
+        <h3>Pan India Delivery</h3>
+        <p>Fast and secure delivery across all of India. Express options available for urgent orders.</p>
+      </div>
+      <div class="why-card" data-aos="fade-up" data-aos-delay="500">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <h3>Dedicated Support</h3>
+        <p>Our design and support team is available 7 days a week to assist with your orders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Contact <span class="gradient-text">Us</span></h2>
+      <p class="section-sub">Have a custom requirement? Send us an enquiry or visit us in Delhi.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info" data-aos="fade-right">
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <div>
+            <h4>Our Location</h4>
+            <p>Shop No. 4, Ground Floor, Umed Singh Complex, Behind Shiva Market, Pitampura, New Delhi – 110034</p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-phone-alt"></i>
+          <div>
+            <h4>Phone / WhatsApp</h4>
+            <p><a href="tel:+918048964183">+91 80489 64183</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>Email</h4>
+            <p><a href="mailto:info@beamcraft.in">info@beamcraft.in</a></p>
+          </div>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-clock"></i>
+          <div>
+            <h4>Working Hours</h4>
+            <p>Mon–Sat: 10:00 AM – 7:00 PM<br/>Sunday: Closed</p>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="contact-form-wrapper" data-aos="fade-left">
+        <form id="enquiryForm" class="contact-form">
+          <h3>Send an Enquiry</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contactName">Your Name</label>
+              <input type="text" id="contactName" placeholder="Rahul Sharma" required />
+            </div>
+            <div class="form-group">
+              <label for="contactPhone">Phone Number</label>
+              <input type="tel" id="contactPhone" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" id="contactEmail" placeholder="rahul@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <select id="contactSubject">
+              <option>Custom Order Enquiry</option>
+              <option>Bulk/Corporate Order</option>
+              <option>Product Information</option>
+              <option>Pricing & Quote</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" rows="4" placeholder="Tell us about your requirements..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full" id="enquirySubmitBtn">
+            <i class="fas fa-paper-plane"></i> Send Enquiry
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <img src="images/logo.svg" alt="Beamcraft Logo" style="height: 48px; object-fit: contain;">
+          </a>
+          <p>Premium laser-cut products by Unimark Enterprises. Crafting brilliance since 2015 in the heart of Delhi.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#process">How It Works</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="#products">Nameplates & Signage</a></li>
+            <li><a href="#products">Home Decor & Lamps</a></li>
+            <li><a href="#products">Gifts & Personalized</a></li>
+            <li><a href="#products">Wedding & Events</a></li>
+            <li><a href="#products">Festive & Seasonal</a></li>
+            <li><a href="#products">Kitchen & Dining</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-map-marker-alt"></i> Behind Shiva Market, Pitampura, New Delhi – 110034</p>
+          <p><i class="fas fa-phone"></i> <a href="tel:+918048964183">+91 80489 64183</a></p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:info@beamcraft.in">info@beamcraft.in</a></p>
+          <p><i class="fas fa-clock"></i> Mon–Sat: 10 AM – 7 PM</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 BeamCraft by Unimark Enterprises. All rights reserved.</p>
+      <p>Crafted with <i class="fas fa-heart text-accent"></i> in Delhi</p>
+    </div>
+  </div>
+</footer>
+
+<!-- CART DRAWER -->
+<div id="cartOverlay" class="cart-overlay"></div>
+<div id="cartDrawer" class="cart-drawer">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-cart"></i> Your Cart</h3>
+    <button id="cartClose"><i class="fas fa-times"></i></button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty">
+      <i class="fas fa-shopping-cart fa-3x"></i>
+      <p>Your cart is empty</p>
+      <a href="#products" class="btn-primary" onclick="closeCart()">Browse Products</a>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total">
+      <span>Subtotal</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <div class="cart-shipping">
+      <span id="shippingNote">Free shipping on orders above ₹1000</span>
+    </div>
+    <button class="btn-primary btn-full" onclick="openCheckout()">
+      <i class="fas fa-lock"></i> Proceed to Checkout
+    </button>
+  </div>
+</div>
+
+<!-- PRODUCT MODAL -->
+<div id="productModal" class="modal-overlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- CHECKOUT MODAL -->
+<div id="checkoutModal" class="modal-overlay">
+  <div class="modal-box checkout-box">
+    <button class="modal-close" id="checkoutClose"><i class="fas fa-times"></i></button>
+    <div class="checkout-content">
+      <h2><i class="fas fa-lock"></i> Checkout</h2>
+      <form id="checkoutForm">
+        <div class="checkout-section">
+          <h3>Delivery Details</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="ckName" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label>Phone *</label>
+              <input type="tel" id="ckPhone" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="ckEmail" placeholder="Email for order updates" />
+          </div>
+          <div class="form-group">
+            <label>Delivery Address *</label>
+            <textarea id="ckAddress" rows="3" placeholder="Full address with pin code" required></textarea>
+          </div>
+          <div class="form-group">
+            <label>Customization Notes</label>
+            <textarea id="ckCustomization" rows="2" placeholder="Any special customization or instructions..."></textarea>
+          </div>
+        </div>
+        <div class="checkout-section">
+          <h3>Payment Method</h3>
+          <div class="payment-options">
+            <label class="payment-opt active" id="payOptCOD">
+              <input type="radio" name="payment" value="COD" checked />
+              <i class="fas fa-money-bill-wave"></i>
+              <span>Cash on Delivery</span>
+            </label>
+            <label class="payment-opt" id="payOptUPI">
+              <input type="radio" name="payment" value="UPI" />
+              <i class="fas fa-qrcode"></i>
+              <span>UPI / Online</span>
+            </label>
+          </div>
+        </div>
+        <div class="checkout-order-summary" id="checkoutSummary"></div>
+        <button type="submit" class="btn-primary btn-full" id="placeOrderBtn">
+          <i class="fas fa-check-circle"></i> Place Order
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ORDER SUCCESS -->
+<div id="orderSuccessModal" class="modal-overlay">
+  <div class="modal-box success-box">
+    <div class="success-animation">
+      <div class="success-circle">
+        <i class="fas fa-check"></i>
+      </div>
+    </div>
+    <h2>Order Placed!</h2>
+    <p>Thank you for your order. Our team will contact you shortly to confirm.</p>
+    <p class="order-id-display" id="orderIdDisplay"></p>
+    <div class="success-actions">
+      <button class="btn-primary" onclick="closeAllModals()">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeamCraft Admin Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ─── LOGIN PAGE ──────────────────────────────── -->
+<div id="loginPage" class="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+    <div class="login-logo">
+      <img src="/images/logo.svg" alt="Beamcraft Logo" style="height: 60px; object-fit: contain; margin-bottom: 2rem;">
+      <h1>Admin Portal</h1>
+      <p>Unimark Enterprises · Pitampura, Delhi</p>
+    </div>
+    <form class="login-form" id="loginForm">
+      <div class="form-group">
+        <label>Email Address</label>
+        <div class="input-wrap">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="loginEmail" placeholder="admin@beamcraft.in" value="admin@beamcraft.in" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <div class="input-wrap">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="loginPassword" placeholder="••••••••" value="beamcraft@2026" required />
+        </div>
+      </div>
+      <div class="login-error" id="loginError"></div>
+      <button type="submit" class="btn-login" id="loginBtn">
+        <i class="fas fa-sign-in-alt"></i> Login to Admin
+      </button>
+    </form>
+    <p style="text-align:center;margin-top:1.5rem;font-size:0.8rem;color:#6060a0;">
+      <a href="/" style="color:#e94560;text-decoration:none;">← Back to Website</a>
+    </p>
+  </div>
+</div>
+
+<!-- ─── ADMIN APP ──────────────────────────────── -->
+<div id="adminApp">
+  
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <a href="/" class="sidebar-logo" target="_blank">
+      <img src="/images/logo.svg" alt="Beamcraft Logo" style="height: 32px; object-fit: contain;">
+      <span class="sidebar-badge" style="margin-left:auto;">Admin</span>
+    </a>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+      <a href="#" class="sidebar-link active" data-page="dashboard" onclick="showPage('dashboard', this)">
+        <i class="fas fa-chart-pie"></i> Dashboard
+      </a>
+      <a href="#" class="sidebar-link" data-page="orders" onclick="showPage('orders', this)">
+        <i class="fas fa-shopping-bag"></i> Orders
+        <span class="badge-count" id="pendingBadge">0</span>
+      </a>
+      <a href="#" class="sidebar-link" data-page="products" onclick="showPage('products', this)">
+        <i class="fas fa-box-open"></i> Products
+      </a>
+
+      <div class="nav-section-label">Management</div>
+      <a href="#" class="sidebar-link" data-page="enquiries" onclick="showPage('enquiries', this)">
+        <i class="fas fa-envelope-open-text"></i> Enquiries
+        <span class="badge-count" id="enquiryBadge">0</span>
+      </a>
+      <a href="#" class="sidebar-link" data-page="settings" onclick="showPage('settings', this)">
+        <i class="fas fa-cog"></i> Settings
+      </a>
+
+      <div class="nav-section-label">Quick Links</div>
+      <a href="/" target="_blank" class="sidebar-link">
+        <i class="fas fa-external-link-alt"></i> View Website
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="admin-user">
+        <div class="admin-avatar" id="adminAvatar">A</div>
+        <div>
+          <div class="admin-name" id="adminName">Admin</div>
+          <div class="admin-role">Administrator</div>
+        </div>
+      </div>
+      <button class="btn-logout" onclick="logout()">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+
+    <!-- TOPBAR -->
+    <div class="topbar">
+      <div class="topbar-title">
+        <h2 id="pageTitle">Dashboard</h2>
+        <p id="pageSubtitle">Welcome back! Here's what's happening today.</p>
+      </div>
+      <div class="topbar-actions">
+        <div class="topbar-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="topbarSearch" placeholder="Search..." />
+        </div>
+        <button class="btn-primary-admin" id="topbarActionBtn" onclick="openAddProductModal()">
+          <i class="fas fa-plus"></i> Add Product
+        </button>
+      </div>
+    </div>
+
+    <div class="page-content">
+
+      <!-- ── DASHBOARD PAGE ── -->
+      <div class="page active" id="page-dashboard">
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-icon revenue"><i class="fas fa-rupee-sign"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Total Revenue</div>
+              <div class="stat-value" id="statRevenue">₹0</div>
+              <div class="stat-change up"><i class="fas fa-arrow-up"></i> Live data</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orders"><i class="fas fa-shopping-bag"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Total Orders</div>
+              <div class="stat-value" id="statOrders">0</div>
+              <div class="stat-change up"><i class="fas fa-arrow-up"></i> All time</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon pending"><i class="fas fa-clock"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Pending Orders</div>
+              <div class="stat-value" id="statPending">0</div>
+              <div class="stat-change"><i class="fas fa-dot-circle"></i> Needs attention</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon products"><i class="fas fa-box"></i></div>
+            <div class="stat-info">
+              <div class="stat-label">Products</div>
+              <div class="stat-value" id="statProducts">0</div>
+              <div class="stat-change up"><i class="fas fa-arrow-up"></i> In catalog</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3><i class="fas fa-chart-line" style="color:#e94560;margin-right:8px;"></i>Revenue (Last 7 Days)</h3>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="revenueChart"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <h3><i class="fas fa-chart-pie" style="color:#ff6b35;margin-right:8px;"></i>Order Status</h3>
+            </div>
+            <div class="chart-canvas-wrap">
+              <canvas id="statusChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-card">
+          <div class="table-card-header">
+            <h3>Recent Orders</h3>
+            <a href="#" class="btn-primary-admin" onclick="showPage('orders', document.querySelector('[data-page=orders]'))">View All</a>
+          </div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th><th>Customer</th><th>Items</th>
+                  <th>Total</th><th>Status</th><th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="recentOrdersBody">
+                <tr><td colspan="6" style="text-align:center;color:#6060a0;padding:2rem;">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ORDERS PAGE ── -->
+      <div class="page" id="page-orders">
+        <div class="table-card">
+          <div class="table-card-header">
+            <h3><i class="fas fa-shopping-bag" style="color:#e94560;margin-right:8px;"></i>All Orders</h3>
+            <div class="table-toolbar">
+              <div class="table-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="orderSearch" placeholder="Search orders..." oninput="filterOrders()" />
+              </div>
+              <select class="table-filter-select" id="orderStatusFilter" onchange="filterOrders()">
+                <option value="all">All Status</option>
+                <option value="pending">Pending</option>
+                <option value="processing">Processing</option>
+                <option value="shipped">Shipped</option>
+                <option value="delivered">Delivered</option>
+                <option value="cancelled">Cancelled</option>
+              </select>
+              <button class="btn-primary-admin" onclick="loadOrders()">
+                <i class="fas fa-sync-alt"></i> Refresh
+              </button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Order ID</th><th>Customer</th><th>Phone</th>
+                  <th>Items</th><th>Total</th><th>Payment</th>
+                  <th>Status</th><th>Date</th><th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="ordersTableBody">
+                <tr><td colspan="9" style="text-align:center;color:#6060a0;padding:2rem;">Loading orders...</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pagination" id="ordersPagination"></div>
+        </div>
+      </div>
+
+      <!-- ── PRODUCTS PAGE ── -->
+      <div class="page" id="page-products">
+        <div class="table-card">
+          <div class="table-card-header">
+            <h3><i class="fas fa-box-open" style="color:#e94560;margin-right:8px;"></i>Product Catalog</h3>
+            <div class="table-toolbar">
+              <div class="table-search">
+                <i class="fas fa-search"></i>
+                <input type="text" id="productSearch" placeholder="Search products..." oninput="filterProducts()" />
+              </div>
+              <select class="table-filter-select" id="productCatFilter" onchange="filterProducts()">
+                <option value="all">All Categories</option>
+              </select>
+              <button class="btn-primary-admin" onclick="openAddProductModal()">
+                <i class="fas fa-plus"></i> Add Product
+              </button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image</th><th>Product Name</th><th>Category</th>
+                  <th>Price</th><th>Stock</th><th>Status</th>
+                  <th>Featured</th><th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="productsTableBody">
+                <tr><td colspan="8" style="text-align:center;color:#6060a0;padding:2rem;">Loading products...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── ENQUIRIES PAGE ── -->
+      <div class="page" id="page-enquiries">
+        <div class="table-card">
+          <div class="table-card-header">
+            <h3><i class="fas fa-envelope-open-text" style="color:#e94560;margin-right:8px;"></i>Customer Enquiries</h3>
+            <button class="btn-primary-admin" onclick="loadEnquiries()">
+              <i class="fas fa-sync-alt"></i> Refresh
+            </button>
+          </div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr><th>Name</th><th>Phone</th><th>Email</th><th>Subject</th><th>Message</th><th>Date</th><th>Status</th></tr>
+              </thead>
+              <tbody id="enquiriesTableBody">
+                <tr><td colspan="7" style="text-align:center;color:#6060a0;padding:2rem;">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SETTINGS PAGE ── -->
+      <div class="page" id="page-settings">
+        <div style="max-width:600px;">
+          <div class="table-card" style="padding:2rem;margin-bottom:1.5rem;">
+            <h3 style="margin-bottom:1.5rem;"><i class="fas fa-lock" style="color:#e94560;margin-right:8px;"></i>Change Password</h3>
+            <form id="changePasswordForm" class="admin-form">
+              <div class="form-group">
+                <label>Current Password</label>
+                <input type="password" id="currentPassword" placeholder="Enter current password" required />
+              </div>
+              <div class="form-group">
+                <label>New Password</label>
+                <input type="password" id="newPassword" placeholder="Enter new password" required />
+              </div>
+              <div class="form-group">
+                <label>Confirm New Password</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm new password" required />
+              </div>
+              <button type="submit" class="btn-primary-admin">
+                <i class="fas fa-save"></i> Update Password
+              </button>
+            </form>
+          </div>
+          <div class="table-card" style="padding:2rem;">
+            <h3 style="margin-bottom:1rem;"><i class="fas fa-info-circle" style="color:#e94560;margin-right:8px;"></i>System Info</h3>
+            <div class="order-info-row"><span>Company</span><span>Unimark Enterprises</span></div>
+            <div class="order-info-row"><span>Brand</span><span>BeamCraft</span></div>
+            <div class="order-info-row"><span>Location</span><span>Pitampura, New Delhi</span></div>
+            <div class="order-info-row"><span>Admin Email</span><span id="settingsEmail">admin@beamcraft.in</span></div>
+            <div class="order-info-row"><span>Version</span><span>v1.0.0</span></div>
+            <div class="order-info-row" style="border-bottom:none;">
+              <span>Website</span>
+              <a href="/" target="_blank" style="color:#e94560;">View Live Site →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<!-- ─── PRODUCT MODAL ─────────────────────────── -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal-box wide">
+    <div class="modal-header">
+      <h3 id="productModalTitle">Add New Product</h3>
+      <button class="modal-close" onclick="closeModal('productModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <form class="admin-form" id="productForm" enctype="multipart/form-data">
+      <input type="hidden" id="productId" />
+      <div class="form-row">
+        <div class="form-group">
+          <label>Product Name *</label>
+          <input type="text" id="pName" placeholder="e.g. Premium Acrylic Nameplate" required />
+        </div>
+        <div class="form-group">
+          <label>Category *</label>
+          <select id="pCategory" required>
+            <option value="">Select category...</option>
+            <option>Nameplates & Signage</option>
+            <option>Awards & Trophies</option>
+            <option>Decorative Items</option>
+            <option>Interior Decor</option>
+            <option>Gifts & Personalized</option>
+            <option>Wedding Collection</option>
+            <option>Office Accessories</option>
+            <option>Tech Accessories</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Subcategory</label>
+          <input type="text" id="pSubcategory" placeholder="e.g. Acrylic Nameplates" />
+        </div>
+        <div class="form-group">
+          <label>Material</label>
+          <input type="text" id="pMaterial" placeholder="e.g. Acrylic / MDF Wood" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Description *</label>
+        <textarea id="pDescription" rows="3" placeholder="Detailed product description..." required></textarea>
+      </div>
+      <div class="form-row-3">
+        <div class="form-group">
+          <label>Sale Price (₹) *</label>
+          <input type="number" id="pPrice" placeholder="450" min="0" required />
+        </div>
+        <div class="form-group">
+          <label>Original Price (₹)</label>
+          <input type="number" id="pOriginalPrice" placeholder="650" min="0" />
+        </div>
+        <div class="form-group">
+          <label>Quantity in Stock</label>
+          <input type="number" id="pQuantity" placeholder="50" min="0" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Sizes (comma-separated)</label>
+          <input type="text" id="pSizes" placeholder="6x4 inch, 8x4 inch, 12x6 inch" />
+        </div>
+        <div class="form-group">
+          <label>Colors (comma-separated)</label>
+          <input type="text" id="pColors" placeholder="Clear, Frosted, Black, Gold" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Tags (comma-separated)</label>
+        <input type="text" id="pTags" placeholder="nameplate, acrylic, office, signage" />
+      </div>
+      <div class="form-group">
+        <label>Image URL (or upload below)</label>
+        <input type="text" id="pImageUrl" placeholder="https://... or leave blank to use upload" />
+      </div>
+      <div class="form-group">
+        <label>Upload Images</label>
+        <div class="upload-zone" onclick="document.getElementById('pImages').click()">
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p>Click to upload product images (Max 5 files, 10MB each)</p>
+          <input type="file" id="pImages" accept="image/*" multiple style="display:none;" onchange="previewImages(this)" />
+        </div>
+        <div class="upload-preview" id="uploadPreview"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:1rem;">
+        <label class="checkbox-group">
+          <input type="checkbox" id="pInStock" checked/> In Stock
+        </label>
+        <label class="checkbox-group">
+          <input type="checkbox" id="pCustomizable" checked/> Customizable
+        </label>
+        <label class="checkbox-group">
+          <input type="checkbox" id="pFeatured"/> Featured
+        </label>
+        <label class="checkbox-group">
+          <input type="checkbox" id="pNew"/> New Arrival
+        </label>
+        <label class="checkbox-group">
+          <input type="checkbox" id="pBestseller"/> Bestseller
+        </label>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" onclick="closeModal('productModal')">Cancel</button>
+        <button type="submit" class="btn-primary-admin" id="productSubmitBtn">
+          <i class="fas fa-save"></i> Save Product
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ─── ORDER DETAIL MODAL ────────────────────── -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-box wide">
+    <div class="modal-header">
+      <h3 id="orderModalTitle">Order Details</h3>
+      <button class="modal-close" onclick="closeModal('orderModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="orderModalContent"></div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

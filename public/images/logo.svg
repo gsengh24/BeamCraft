@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="100%" height="100%">
+  <defs>
+    <style>
+      .text-beam { font-family: 'Playfair Display', 'Georgia', serif; font-size: 64px; fill: #2d2d2d; font-weight: normal; }
+      .text-craft { font-family: 'Playfair Display', 'Georgia', serif; font-size: 64px; fill: #FFCA28; font-weight: normal; }
+    </style>
+  </defs>
+
+  <!-- PETALS (Flower above 'b') -->
+  <g transform="translate(18, 20) scale(0.65)">
+    <!-- Red petal (top left) -->
+    <path d="M25,25 C25,25 0,0 15, -5 C30, -10 25,25 25,25 Z" fill="#E53935" transform="rotate(-40 25 25)"/>
+    <!-- Yellow petal (top middle) -->
+    <path d="M25,25 C25,25 10,-5 25, -15 C40,-5 25,25 25,25 Z" fill="#FFCA28" />
+    <!-- Purple petal (top right) -->
+    <path d="M25,25 C25,25 50,0 35, -5 C20, -10 25,25 25,25 Z" fill="#AB47BC" transform="rotate(40 25 25)"/>
+    <!-- Green petal (bottom right) -->
+    <path d="M25,25 C25,25 60,30 45, 10 C30, -10 25,25 25,25 Z" fill="#66BB6A" transform="rotate(20 25 25)"/>
+    <!-- Teal petal (bottom left) -->
+    <path d="M25,25 C25,25 -10,30 5, 10 C20, -10 25,25 25,25 Z" fill="#26C6DA" transform="rotate(-20 25 25)"/>
+  </g>
+
+  <!-- TEXT -->
+  <text x="35" y="85" class="text-beam">beam</text>
+  <text x="210" y="85" class="text-craft">craft</text>
+</svg>

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "admin-001",
+    "name": "Unimark Admin",
+    "email": "admin@beamcraft.in",
+    "password": "$2b$10$khQIQiQ./RoSaCYZhi3xh.KnZTkW3VbuOBcUJcfUWPvlILrADkr36",
+    "role": "admin",
+    "createdAt": "2026-01-01T00:00:00.000Z"
+  }
+]
